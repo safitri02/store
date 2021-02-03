@@ -12,6 +12,7 @@
 
 @yield('css')
 <!-- CSS here -->
+<link rel="stylesheet" href="{{ url('../css/base.css') }}">
 <link rel="stylesheet" href="{{ url('../assets/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ url('../assets/css/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ url('../assets/css/flaticon.css') }}">
@@ -100,7 +101,7 @@
 @yield('content')
 
  {{-- @include('sweet::alert') --}}
- 
+
 @yield('footer')
 <footer>
 <!-- Footer Start-->

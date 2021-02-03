@@ -22,7 +22,7 @@ class ProdukController extends Controller
 
     public function show()
     {
-        $produk = Produk::with('kategori')->get();
+        $produk = Produk::with('kategori')->paginate(10);
         return view('produk.showAll', compact('produk'));
     }
 

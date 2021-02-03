@@ -57,62 +57,36 @@
         </div>
 </div>
 <!-- Nav Card -->
+
 <main>
+<div class="container mb-5">
 <div class="tab-content" id="nav-tabContent">
     <!-- card one -->
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-product mb-60">
-                    <div class="product-img">
-                        <img src="assets/img/categori/product6.png" alt="">
-                    </div>
-                    <div class="product-caption">
-                        <h4><a href="#">Green Dress with details</a></h4>
-                        <div class="price">
-                            <ul>
-                                <li>$40.00</li> <br>
-                                 <a href="/buy" class="btn btn-sucess btn-sm">Buy</a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-product mb-60">
-                    <div class="product-img">
-                        <img src="assets/img/categori/product6.png" alt="">
-                    </div>
-                    <div class="product-caption">
-                        <h4><a href="#">Green Dress with details</a></h4>
-                        <div class="price">
-                            <ul>
-                                <li>$40.00</li> <br>
-                                <a href="/buy" class="btn btn-sucess btn-sm">Buy</a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-product mb-60">
-                    <div class="product-img">
-                        <img src="assets/img/categori/product6.png" alt="">
-                    </div>
-                    <div class="product-caption">
-                        <h4><a href="#">Green Dress with details</a></h4>
-                        <div class="price">
-                            <ul>
-                                <li>$40.00</li> <br>
-                                 <a href="/buy" class="btn btn-sucess btn-sm">Buy</a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-lg-12">
+            <div class="section-tittle text-center mb-85 mt-5">
+                <h2>All Product</h2>
             </div>
         </div>
-    </div>
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="row">
+        @foreach ($produk as $p)
+              
+       <div class="col-md-3">
+       <div class="produk">
+       <div class="card">
+        <img src="{{ url('/storage/' .$p->image) }}"">
+        <div class="card-body">
+            <a href="/detail/produk"><h5 class="card-title">{{ $p->name }}</h5></a>
+        </div>
+        </div>
+        </div>
+       </div>
 
+        @endforeach
+            {{ $produk->links() }}
+        </div>
+    </div>
+</div>
 </main>
 
 @endsection

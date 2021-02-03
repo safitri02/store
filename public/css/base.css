@@ -1,0 +1,13 @@
+.row .produk .card{
+    height: 350px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    box-shadow:5px 5px 15px rgba(100,100,100,0.3);
+}
+
+.row .produk .card img{
+    max-height: 280px;
+    border-radius: 15px;
+}
+

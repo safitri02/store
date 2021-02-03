@@ -12,17 +12,18 @@
 <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
 <!-- CSS here -->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-<link rel="stylesheet" href="assets/css/flaticon.css">
-<link rel="stylesheet" href="assets/css/slicknav.css">
-<link rel="stylesheet" href="assets/css/animate.min.css">
-<link rel="stylesheet" href="assets/css/magnific-popup.css">
-<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-<link rel="stylesheet" href="assets/css/themify-icons.css">
-<link rel="stylesheet" href="assets/css/slick.css">
-<link rel="stylesheet" href="assets/css/nice-select.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="{{ url('../css/base.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/flaticon.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/slicknav.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/animate.min.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/fontawesome-all.min.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/themify-icons.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/slick.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/nice-select.css') }}">
+<link rel="stylesheet" href="{{ url('../assets/css/style.css') }}">
 </head>
 
 <body>
@@ -194,40 +195,34 @@
 <!-- Category Area End-->
 
 <main>
+<div class="container">
 <div class="tab-content" id="nav-tabContent">
     <!-- card one -->
-    <div class="row">
         <div class="col-lg-12">
             <div class="section-tittle text-center mb-85 mt-5">
                 <h2>All Product</h2>
             </div>
         </div>
-    </div>
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <div class="row">
-          @foreach ($produk as $p)
+        @foreach ($produk as $p)
               
-        <div class="col-xl-3 col-lg-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img src="{{ url('/storage/' .$p->image) }}" style="max-width:250px;">
-                    </div>
-                    <div class="product-caption">
-                        <h4><a href="#">{{ $p->name }}</a></h4>
-                        <div class="price">
-                            <ul>
-                                <li>Rp.{{ number_format($p->price)}}</li> <br>
-                                <a href="/buy" class="btn btn-sucess btn-sm">Detail Product</a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+       <div class="col-md-3">
+       <div class="produk">
+       <div class="card">
+        <img src="{{ url('/storage/' .$p->image) }}"">
+        <div class="card-body">
+            <a href="/detail/produk"><h5 class="card-title">{{ $p->name }}</h5></a>
+        </div>
+        </div>
+        </div>
+       </div>
 
-            @endforeach
+        @endforeach
             
         </div>
     </div>
+</div>
 </main>
 
 <!-- Shop Method Start-->
@@ -350,39 +345,39 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- JS here -->
 
 <!-- All JS Custom Plugins Link Here here -->
-<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="{{ url('./assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 
 <!-- Jquery, Popper, Bootstrap -->
-<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
+<script src="{{ url('../assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+<script src="{{ url('../assets/js/popper.min.js') }}"></script>
+<script src="{{ url('../assets/js/bootstrap.min.js') }}"></script>
 <!-- Jquery Mobile Menu -->
-<script src="./assets/js/jquery.slicknav.min.js"></script>
+<script src="{{ url('../assets/js/jquery.slicknav.min.js') }}"></script>
 
 <!-- Jquery Slick , Owl-Carousel Plugins -->
-<script src="./assets/js/owl.carousel.min.js"></script>
-<script src="./assets/js/slick.min.js"></script>
+<script src="{{ url('../assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ url('../assets/js/slick.min.js') }}"></script>
 
 <!-- One Page, Animated-HeadLin -->
-<script src="./assets/js/wow.min.js"></script>
-<script src="./assets/js/animated.headline.js"></script>
+<script src="{{ url('../assets/js/wow.min.js') }}"></script>
+<script src="{{ url('../assets/js/animated.headline.js') }}"></script>
 
 <!-- Scrollup, nice-select, sticky -->
-<script src="./assets/js/jquery.scrollUp.min.js"></script>
-<script src="./assets/js/jquery.nice-select.min.js"></script>
-<script src="./assets/js/jquery.sticky.js"></script>
+<script src="{{ url('../assets/js/jquery.scrollUp.min.js') }}"></script>
+<script src="{{ url('../assets/js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ url('../assets/js/jquery.sticky.js') }}"></script>
 <script src="./assets/js/jquery.magnific-popup.js"></script>
 
 <!-- contact js -->
-<script src="./assets/js/contact.js"></script>
-<script src="./assets/js/jquery.form.js"></script>
-<script src="./assets/js/jquery.validate.min.js"></script>
-<script src="./assets/js/mail-script.js"></script>
-<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="{{ url('../assets/js/contact.js') }}"></script>
+<script src="{{ url('../assets/js/jquery.form.js') }}"></script>
+<script src="{{ url('../assets/js/jquery.validate.min.js') }}"></script>
+<script src="{{ url('../assets/js/mail-script.js') }}"></script>
+<script src="{{ url('./assets/js/jquery.ajaxchimp.min.js') }}"></script>
 
 <!-- Jquery Plugins, main Jquery -->	
-<script src="./assets/js/plugins.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="{{ url('../assets/js/plugins.js') }}"></script>
+<script src="{{ url('../assets/js/main.js') }}"></script>
 
 </body>
 

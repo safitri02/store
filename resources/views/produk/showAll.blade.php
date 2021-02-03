@@ -48,8 +48,12 @@
                 <p class="text-center">Data Kosong</p>
 
             @endforelse
-        
+           
         </table>
+        <div class="justify-content-center mt-5 text-center">
+            {{ $produk->links() }}
+        </div>
+         
     </div>
 </div>
 </div>
