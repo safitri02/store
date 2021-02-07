@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth', 'level:penjual']], function () {
 });
 
 Route::group(['middleware' => ['auth','level:pembeli']], function () {
-    Route::get('/pembeli', 'PembeliController@index');
+    Route::get('/produk', 'PembeliController@index');
+    Route::get('/detail/product/{id}', 'PembeliController@detail');
 });
 

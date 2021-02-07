@@ -1,3 +1,7 @@
+body{
+font-family: 'Poppins', sans-serif;
+}
+
 .row .produk .card{
     height: 350px;
     margin: 10px;
@@ -9,5 +13,10 @@
 .row .produk .card img{
     max-height: 280px;
     border-radius: 15px;
+}
+
+.produkimg img{
+    width: 400px;
+    border-radius: 10px;
 }
 

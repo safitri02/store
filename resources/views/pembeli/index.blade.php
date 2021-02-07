@@ -74,16 +74,17 @@
        <div class="col-md-3">
        <div class="produk">
        <div class="card">
-        <img src="{{ url('/storage/' .$p->image) }}"">
+        <img src="{{ url('/storage/' .$p->image) }}">
         <div class="card-body">
-            <a href="/detail/produk"><h5 class="card-title">{{ $p->name }}</h5></a>
+            <a href="/detail/product/{{ $p->id }}"><h5 class="card-title">{{ $p->name }}</h5></a>
         </div>
         </div>
         </div>
        </div>
 
         @endforeach
-            {{ $produk->links() }}
+        <div class="col-md-12 mt-5 mb-3 text-center justify-content-center">{{ $produk->links() }}</div>
+            
         </div>
     </div>
 </div>
