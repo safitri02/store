@@ -7,6 +7,23 @@
 
 <div class="container">
 
+<!-- slider Area Start-->
+<div class="slider-area ">
+<!-- Mobile Menu -->
+<div class="single-slider slider-height2 d-flex align-items-center" data-background="{{ url('../assets/img/hero/category.jpg') }}">
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="hero-cap text-center">
+                <h2>Detail Produk {{ $produk->name }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- slider Area End-->
+
 <div class="row mt-5 mb-5">
     <div class="col-md-6">
     <div class="produkimg">
@@ -25,7 +42,7 @@
         <h5 class="mb-5">Keterangan Produk : {{ $produk->keterangan }}</h5>
 
         <a href="/produk" class="btn btn-primary mb-3 mt-3">Kembali</a> <br>
-        <a href="/cart" class="btn btn-primary">Masukkan Keranjang</a>
+        <a href="/produk/keranjang/{{ $produk->id }}" class="btn btn-primary">Masukkan Keranjang</a>
 
     </div>
 </div>

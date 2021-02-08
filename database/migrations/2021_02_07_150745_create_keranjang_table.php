@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderDetailTable extends Migration
+class CreateKeranjangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateOrderDetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_detail', function (Blueprint $table) {
+        Schema::create('keranjang', function (Blueprint $table) {
             $table->id();
-            $table->integer('transaksi_id');
-            $table->integer('product_id');
-            $table->string('status');
-            $table->softDeletes();
+            $table->integer('id_user');
+            $table->integer('id_produk');
+            $table->string('harga_satuan');
+            $table->string('jumlah');
+            $table->string('total');
+            $table->string('subtotal');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateOrderDetailTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksi_detail');
+        Schema::dropIfExists('keranjang');
     }
 }

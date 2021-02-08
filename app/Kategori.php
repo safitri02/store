@@ -12,6 +12,6 @@ class Kategori extends Model
 
     public function produk()
     {
-        return $this->belongsTo(Produk::class, 'id', 'id_category');
+        return $this->hasMany(Produk::class, 'id', 'id_category');
     }
 }

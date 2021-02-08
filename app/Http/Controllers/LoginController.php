@@ -30,7 +30,7 @@ class LoginController extends Controller
             return redirect('/penjual');
         }elseif(Auth()->user()->level=="pembeli"){
             // echo "Masuk pembeli";
-            return redirect('/pembeli');
+            return redirect('/produk');
         } else{
             echo "Email atau password salah";
         }

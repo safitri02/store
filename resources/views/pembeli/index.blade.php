@@ -76,7 +76,7 @@
        <div class="card">
         <img src="{{ url('/storage/' .$p->image) }}">
         <div class="card-body">
-            <a href="/detail/product/{{ $p->id }}"><h5 class="card-title">{{ $p->name }}</h5></a>
+            <a href="/detail/produk/{{ $p->id }}"><h5 class="card-title">{{ $p->name }}</h5></a>
         </div>
         </div>
         </div>
