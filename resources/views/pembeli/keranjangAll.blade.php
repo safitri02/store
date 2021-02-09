@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-xl-12">
             <div class="hero-cap text-center">
-                <h2>Keranjang</h2>
+                <h2>Keranjang Anda</h2>
             </div>
         </div>
     </div>
@@ -40,46 +40,42 @@
 </thead>
 <tbody>
  
+ @foreach ($keranjang as $ker)
+     
   <tr>
     <td>
       <div class="media">
         <div class="d-flex">
-          <img src="{{ url('/storage/'. $produk->image) }}" alt="" />
+          <img src="{{ url('/storage/'. $ker->produk->image) }}" alt="" />
         </div>
         <div class="media-body">
-          <p>{{ $produk->name }}</p>
+          <p>{{ $ker->produk->name }}</p>
         </div>
       </div>
     </td>
     <td>
-      <h5>Rp.{{ number_format($produk->price) }}</h5>
+      <h5>Rp.{{ number_format($ker->produk->price) }}</h5>
     </td>
     <td>
-    <form action="/produk/pesan/{{ $produk->id }}" method="post">
-    @csrf
-      <div class="product_count">
-          {{-- <span class="input-number-decrement"> <i class="ti-minus"></i></span> --}}
-          <input class="input-number" name="jumlah" type="text" value="1" required autocomplete="off">
-          {{-- <span class="input-number-increment"> <i class="ti-plus"></i></span> --}}
-      </div>
+      <h5>{{ $ker->jumlah }}</h5>
     </td>
  
   </tr>
-
+@endforeach
 
   <tr class="bottom_button">
     <td>
-      {{-- <a class="btn_1" href="#">Update Cart</a> --}}
+      <a class="btn_1" href="/produk">Kembali Belanja</a>
     </td>
     <td></td>
     <td></td>
     <td>
       <div class="cupon_text float-right">
-        <button type="submit" class="btn_1">Masukkan Keranjang</button>
+        <a href="/produk/checkout" class="btn_1">Checkout</a>
       </div>
     </td>
   </tr>
-  </form>
+
 
   {{-- <tr>
     <td></td>

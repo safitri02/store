@@ -69,8 +69,8 @@
     <div class="main-menu f-right d-none d-lg-block">
         <nav>                                                
             <ul id="navigation">                                                                                                                                     
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="/produk">Produk</a></li>
+                <li><a href="/produk/keranjang">Keranjang</a></li>
             </ul>
         </nav>
     </div>

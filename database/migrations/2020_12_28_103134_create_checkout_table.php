@@ -22,6 +22,7 @@ class CreateCheckoutTable extends Migration
             $table->string('no_hp');
             $table->string('keterangan');
             $table->integer('status');
+            $table->string('total');
             $table->softDeletes();
             $table->timestamps();
         });
