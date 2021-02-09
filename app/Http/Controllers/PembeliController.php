@@ -61,7 +61,7 @@ class PembeliController extends Controller
 
     public function ker()
     {
-        $keranjang = Keranjang::with('produk')->get();
+        $keranjang = Keranjang::with('produk')->where('status', 0)->get();
         return view('pembeli.keranjangAll', compact('keranjang'));
     }
 
@@ -75,6 +75,35 @@ class PembeliController extends Controller
 
     public function checkoutStore(Request $req)
     {
-        echo "Masuk";
+        // echo "Masuk";
+        $data = Keranjang::with('produk')->where('id_user', Auth::user()->id)->where('status', 0)->first();
+
+        $keranjang = Keranjang::with('produk')->where('id_user', Auth::user()->id)->where('status', 0)->update([
+            'status' => 1
+        ]);
+
+        if(!empty($data)){
+            $pesan = new Checkout;
+            $pesan->id_user = $data->id_user;
+            $pesan->id_keranjang = $data->id;
+            $pesan->nama = $req->nama;
+            $pesan->alamat = $req->alamat;
+            $pesan->no_hp = $req->no_hp;
+            $pesan->email = $req->email;
+            $pesan->kode_pos = $req->kode_pos;
+            $pesan->keterangan = $req->keterangan;
+            $pesan->total = $data->jumlah*$data->harga_satuan;
+
+            // return $pesan;
+            // die;
+            $pesan->save();
+
+            return redirect('/order/konfirmasi');
+        }
+    }
+
+    public function konfirmasi()
+    {
+        return view('pembeli.konfirmasi');
     }
 }

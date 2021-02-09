@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Checkout extends Model
 {
     protected $table = 'checkout';
-    protected $fillable = ['id', 'id_user', 'id_keranjang', 'nama', 'no_hp', 'keterangan', 'status', 'total'];
+    protected $fillable = ['id', 'id_user', 'id_keranjang', 'nama', 'no_hp', 'email', 'kode_pos', 'keterangan', 'total'];
 
     public function user()
     {

@@ -13,28 +13,22 @@
     <form class="row contact_form" action="/produk/checkout" method="post" novalidate="novalidate">
     @csrf
         <div class="col-md-12 form-group p_star">
-        <input type="text" class="form-control" id="nama" name="nama" />
-        <span class="placeholder" data-placeholder="Nama"></span>
-        </div>
-        <div class="col-md-12 form-group p_star">
-        <input type="text" class="form-control" id="alamat" name="alamat" />
-        <span class="placeholder" data-placeholder="Alamat"></span>
-        </div>
-        <div class="col-md-6 form-group p_star">
-        <input type="text" class="form-control" id="number" name="number" />
-        <span class="placeholder" data-placeholder="Phone number"></span>
-        </div>
-        <div class="col-md-6 form-group p_star">
-        <input type="text" class="form-control" id="email" name="email" />
-        <span class="placeholder" data-placeholder="Email Address"></span>
-        </div>
-        <div class="col-md-12 form-group p_star">
-        <input type="text" class="form-control" name="kode_pos" />
-        <span class="placeholder" data-placeholder="Kode Pos"></span>
+        <input type="text" class="form-control" placeholder="Nama" id="nama" name="nama" autocomplete="off" autofocus/>
         </div>
         <div class="col-md-12 form-group">
-        <textarea class="form-control" name="message" id="message" rows="1"
-        placeholder="Catatan"></textarea>
+        <textarea class="form-control" name="alamat" rows="1" placeholder="Alamat Lengkap" autocomplete="off" autofocus></textarea>
+        </div>
+        <div class="col-md-6 form-group p_star">
+        <input type="text" placeholder="Nomer Hp" class="form-control" name="no_hp" autocomplete="off" autofocus/>
+        </div>
+        <div class="col-md-6 form-group p_star">
+        <input type="text" placeholder="Email" class="form-control" id="email" name="email" autocomplete="off" autofocus/>
+        </div>
+        <div class="col-md-12 form-group p_star">
+        <input type="text" placeholder="Kode Pos" class="form-control" name="kode_pos" autocomplete="off" autofocus/>
+        </div>
+        <div class="col-md-12 form-group">
+        <textarea class="form-control" name="keterangan" rows="1" autocomplete="off" autofocus placeholder="Pesan untuk penjual"></textarea>
         </div>
   
 </div>

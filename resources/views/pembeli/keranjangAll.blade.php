@@ -40,7 +40,7 @@
 </thead>
 <tbody>
  
- @foreach ($keranjang as $ker)
+ @forelse ($keranjang as $ker)
      
   <tr>
     <td>
@@ -59,10 +59,14 @@
     <td>
       <h5>{{ $ker->jumlah }}</h5>
     </td>
- 
   </tr>
-@endforeach
 
+   @empty 
+  <div class="col-md-12 text-center">
+    <h5>Keranjang Anda Kosong</h5>
+  </div>
+ 
+@endforelse
   <tr class="bottom_button">
     <td>
       <a class="btn_1" href="/produk">Kembali Belanja</a>

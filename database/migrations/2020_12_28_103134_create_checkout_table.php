@@ -20,9 +20,10 @@ class CreateCheckoutTable extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->string('no_hp');
+            $table->string('email');
+            $table->string('kode_pos');
             $table->string('keterangan');
-            $table->integer('status');
-            $table->string('total');
+            $table->integer('total');
             $table->softDeletes();
             $table->timestamps();
         });
