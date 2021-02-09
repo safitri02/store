@@ -104,6 +104,7 @@ class PembeliController extends Controller
 
     public function konfirmasi()
     {
-        return view('pembeli.konfirmasi');
+        $order = Checkout::with('keranjang')->where('id_user', Auth::user()->id)->first();
+        return view('pembeli.konfirmasi', compact('order'));
     }
 }
