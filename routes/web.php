@@ -38,7 +38,8 @@ Route::group(['middleware' => ['auth', 'level:penjual']], function () {
 Route::group(['middleware' => ['auth','level:pembeli']], function () {
     Route::get('/produk', 'PembeliController@index');
     Route::get('/detail/produk/{id}', 'PembeliController@detail');
-    Route::get('/produk/keranjang/{id}', 'PembeliController@keranjang');
     Route::post('/produk/pesan/{id}', 'PembeliController@pesan');
+    Route::get('/produk/keranjang/{id}', 'PembeliController@keranjang');
+   
 });
 

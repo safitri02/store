@@ -33,14 +33,13 @@ class PembeliController extends Controller
 
     public function pesan(Request $req, $id)
     {
-        $produk = Produk::where('id', $id)->first();
-        $id_user = Auth::User()->where('id', $id);
+        $produk = Produk::find($id);
+
         // return $id_user;
         // die;
 
         $keranjang = New Keranjang;
-        $keranjang->id_user = $id_user;
-        $keranjang->id_produk = $produk;
+        $keranjang->id_produk = $produk->id;
         $keranjang->harga_satuan = $produk->price;
         $keranjang->jumlah = $req->jumlah;
         $keranjang->total = $produk->price * $req->jumlah;
@@ -50,7 +49,7 @@ class PembeliController extends Controller
         // die;
         $keranjang->save();
 
-        return back();
+        return redirect('/produk/checkout');
         
     }
 }

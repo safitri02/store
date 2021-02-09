@@ -39,13 +39,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function keranjang()
-    {
-        return $this->belongsTo(Keranjang::class, 'id', 'id');
-    }
 
     public function checkout()
     {
-        return $this->belongsTo(Checkout::class, 'id', 'id');
+        return $this->belongsTo(Checkout::class, 'id', 'id_user');
     }
 }

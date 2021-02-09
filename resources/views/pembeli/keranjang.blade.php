@@ -36,7 +36,6 @@
     <th scope="col">Nama</th>
     <th scope="col">Harga</th>
     <th scope="col">Jumlah</th>
-    <th scope="col">Total</th>
   </tr>
 </thead>
 <tbody>
@@ -65,9 +64,7 @@
           {{-- <span class="input-number-increment"> <i class="ti-plus"></i></span> --}}
       </div>
     </td>
-    <td>
-  <h5></h5>
-    </td>
+ 
   </tr>
 
 
@@ -85,16 +82,16 @@
   </tr>
   </form>
 
-  <tr>
+  {{-- <tr>
     <td></td>
     <td></td>
     <td>
       <h5>Subtotal</h5>
     </td>
     <td>
-      <h5>$2160.00</h5>
+      <h5>kjhg</h5>
     </td>
-  </tr>
+  </tr> --}}
 
  
 </tbody>
