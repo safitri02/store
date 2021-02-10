@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-xl-12">
             <div class="hero-cap text-center">
-                <h2>Keranjang</h2>
+                <h2>{{ $produk->name }}</h2>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
     <td></td>
     <td>
       <div class="cupon_text float-right">
-        <button type="submit" class="btn_1">Masukkan Keranjang</button>
+        <button type="submit" class="btn_1">Simpan</button>
       </div>
     </td>
   </tr>

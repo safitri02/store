@@ -84,7 +84,7 @@
 Pastikan alamat penerima benar, jika ada kesalahan pada alamat kami tidak bertanggung jawab
 </p>
 
-<button class="btn_3" type="submit">Checkout Sekrang</button>
+<button class="btn_3" type="submit">Checkout Sekarang</button>
 
   </form>
 

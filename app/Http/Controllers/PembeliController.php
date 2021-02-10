@@ -42,7 +42,7 @@ class PembeliController extends Controller
 
         $cek_pesanan = Keranjang::where('id_user', Auth::user()->id)->where('status', 0);
 
-        if(!empty($cek_pesanan)) {
+        if(!empty($cek_pesanan)) {  
             $keranjang = New Keranjang;
             $keranjang->id_user = auth::user()->id;
             $keranjang->id_produk = $produk->id;
@@ -105,6 +105,23 @@ class PembeliController extends Controller
     public function konfirmasi()
     {
         $order = Checkout::with('keranjang')->where('id_user', Auth::user()->id)->first();
-        return view('pembeli.konfirmasi', compact('order'));
+        $id = Auth::user()->id;
+        $data = Checkout::with('keranjang')->where('id_user', $id)->get();
+
+        $keranjang = Keranjang::with('produk')->where('id_user', Auth::user()->id)->where('status', 1)->update([
+            'status' => 2
+        ]);
+
+        return view('pembeli.konfirmasi', compact('order', 'data'));
+    }
+
+    public function sukses()
+    {
+        
+        $keranjang = Keranjang::with('produk')->where('id_user', Auth::user()->id)->where('status', 0)->update([
+            'status' => 0
+        ]);
+        
+        return view('pembeli.sukses');
     }
 }

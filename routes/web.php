@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth','level:pembeli']], function () {
     Route::get('/produk/checkout', 'PembeliController@checkout');
     Route::post('/produk/checkout', 'PembeliController@checkoutStore');
     Route::get('/order/konfirmasi', 'PembeliController@konfirmasi');
+    Route::get('/produk/order/sukses', 'PembeliController@sukses');
    
 });
 
